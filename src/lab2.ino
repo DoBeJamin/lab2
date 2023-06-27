@@ -1,7 +1,7 @@
 SYSTEM_MODE(MANUAL);
 SYSTEM_THREAD(ENABLED);
 
-uint16_t blink_speed;
+uint16_t blink_interval;
 bool alternator = true;
 
 
@@ -16,16 +16,16 @@ void setup()
 
 void loop()
 {
-    blink_speed = analogRead(A5);
+    blink_interval = analogRead(A5);
   
-    Serial.println(blink_speed);
+    Serial.println(blink_interval);
 
     if (alternator) {
-        delay(blink_speed);
+        delay(blink_interval);
         digitalWrite(D5, HIGH);
         alternator = false;
     } else {
-        delay(blink_speed);
+        delay(blink_interval);
         digitalWrite(D5, LOW);
         alternator = true;
     }
