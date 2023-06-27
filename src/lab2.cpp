@@ -18,6 +18,7 @@ bool alternator = true;
 void setup()
 {
     pinMode(D5, OUTPUT);
+    pinMode(A5, OUTPUT);
     Serial.begin(9600);
 }
 
